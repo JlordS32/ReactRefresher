@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Search from "./components/Search";
 import MovieCard from "./components/MovieCard";
 import fetchMovies from "./helpers/fetchMovies";
@@ -28,7 +28,7 @@ const App = () => {
 
                <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
-               <section className="all-movies">
+               <section className="all-movies pt-7">
                   <h2>All Movies</h2>
 
                   {isLoading ? (
@@ -38,11 +38,9 @@ const App = () => {
                   ) : movieList.length === 0 ? (
                      <p>No movies found.</p>
                   ) : (
-                     <ul >
+                     <ul>
                         {movieList.map((movie) => (
-                           <li key={movie.id} className="text-white">
-                              {movie.title}
-                           </li>
+                           <MovieCard key={movie.id} movie={movie} />
                         ))}
                      </ul>
                   )}

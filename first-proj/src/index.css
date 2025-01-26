@@ -4,10 +4,6 @@
 
 @import "tailwindcss";
 
-* {
-   outline: solid 1px red;
-}
-
 @theme {
    --color-primary: #030014;
 
